@@ -242,47 +242,49 @@ jsdate.prototype={
 		SetStyles(this.ChooseYearBoxUl,{
 			margin:'0 0 0 0',
 			padding:'0',
-            height:'180px',
-            textAlign:'center',
-            listStyle:'none'
+	            	height:'180px',
+	        	textAlign:'center',
+	        	listStyle:'none'
 		});
 		SetStyles(this.ChooseMonthBoxUl,{
 			margin:'0 0 0 0',
 			padding:'0',
-            height:'180px',
-            textAlign:'center',
-            listStyle:'none'
+		        height:'180px',
+		        textAlign:'center',
+		        listStyle:'none'
 		});	
 	},
 	//生成日历表格框架
 	SetTable:function(){
 		//生成7*7表格
 		for(var i = 0; i < 7; i++){
-	        var atr = this.TableBox.tbody.insertRow(this.TableBox.tbody.rows.length);
-	        for(var j = 0; j < 7; j++){
-	            var atd = atr.insertCell(atr.cells.length);
-				}
-        }
+		        var atr = this.TableBox.tbody.insertRow(this.TableBox.tbody.rows.length);
+		        for(var j = 0; j < 7; j++){
+		            	var atd = atr.insertCell(atr.cells.length);
+			}
+        	}
 		var table_tr=document.getElementById('tablebox').getElementsByTagName('tr');
-        //设置第一行内容
-        var td1=table_tr[0].getElementsByTagName('td');
-        var week=['Su','Mo','Tu','We','Th','Fr','Sa'];
-        for(k=0;k<7;k++)
-        {
-        	td1[k].innerHTML=week[k];
-        }
-        //设置下拉年份框
-        for(var l=0;l<10;l++)
-        	{   var ali=document.createElement('li');
-  				document.getElementById(this.ChooseYearBoxUl.id).appendChild(ali)[l];
-        	}
-        document.getElementById(this.ChooseYearBoxUl.id).getElementsByTagName('li')[0].innerHTML='up';
-        document.getElementById(this.ChooseYearBoxUl.id).getElementsByTagName('li')[9].innerHTML='down';
-        //设置下拉月份框
-        for(var m=0;m<12;m++)
-        	{   var mli=document.createElement('li');
-  				document.getElementById(this.ChooseMonthBoxUl.id).appendChild(mli)[m];
-        	}
+	        //设置第一行内容
+	        var td1=table_tr[0].getElementsByTagName('td');
+	        var week=['Su','Mo','Tu','We','Th','Fr','Sa'];
+	        for(k=0;k<7;k++)
+	        {
+	        	td1[k].innerHTML=week[k];
+	        }
+	        //设置下拉年份框
+	        for(var l=0;l<10;l++)
+	        	{   
+	        		var ali=document.createElement('li');
+	  			document.getElementById(this.ChooseYearBoxUl.id).appendChild(ali)[l];
+	        	}
+	        document.getElementById(this.ChooseYearBoxUl.id).getElementsByTagName('li')[0].innerHTML='up';
+	        document.getElementById(this.ChooseYearBoxUl.id).getElementsByTagName('li')[9].innerHTML='down';
+	        //设置下拉月份框
+	        for(var m=0;m<12;m++)
+	        	{   
+	        		var mli=document.createElement('li');
+	  			document.getElementById(this.ChooseMonthBoxUl.id).appendChild(mli)[m];
+	        	}
 	},
 	//生成日历
 	SetData:function(){
@@ -317,19 +319,19 @@ jsdate.prototype={
 			this.TableBox.rows[m].cells[p].innerHTML=l;
 			p++;
 			l++;
-	    }
+		}
 		for(m=2;m<7;m++)
 		{   
 			for(n=0;n<7;n++)
-		    {    
-		    	this.TableBox.rows[m].cells[n].innerHTML=l;
-		    	l++;
-		    	if(l>m_days[this.mnow])
-			    {
-			    	return;
-			    }
+		    	{    
+		    		this.TableBox.rows[m].cells[n].innerHTML=l;
+		    		l++;
+		    		if(l>m_days[this.mnow])
+				{
+			    		return;
+			    	}
 			    
-		    }
+		    	 }
 		}
 	},
 	//减年份
@@ -426,32 +428,32 @@ jsdate.prototype={
 					var k=l;
 					document.getElementById(that.ChooseYearBoxUl.id).getElementsByTagName('li')[l].onclick=function(){
 						if(k==0)
+						{
+							itarget=itarget-16;
+							for(var j=1;j<9;j++)
 							{
-								itarget=itarget-16;
-								for(var j=1;j<9;j++)
-								{
-									document.getElementById(that.ChooseYearBoxUl.id).getElementsByTagName('li')[j].innerHTML=itarget;
-					    			itarget++;
-								}
-								return;
+								document.getElementById(that.ChooseYearBoxUl.id).getElementsByTagName('li')[j].innerHTML=itarget;
+				    			itarget++;
 							}
+							return;
+						}
 						else if(k==9)
+						{
+							for(var m=1;m<9;m++)
 							{
-								for(var m=1;m<9;m++)
-								{
-									document.getElementById(that.ChooseYearBoxUl.id).getElementsByTagName('li')[m].innerHTML=itarget;
-					    			itarget++;
-								}
-								return;
+								document.getElementById(that.ChooseYearBoxUl.id).getElementsByTagName('li')[m].innerHTML=itarget;
+				    			itarget++;
 							}
+							return;
+						}
 						else
-							{
-								that.ynow=document.getElementById(that.ChooseYearBoxUl.id).getElementsByTagName('li')[k].innerHTML;
+						{
+							that.ynow=document.getElementById(that.ChooseYearBoxUl.id).getElementsByTagName('li')[k].innerHTML;
 				    			itarget=that.ynow;
 				    			document.getElementById(that.ChooseYearBox.id).style.display='none';
 				    			that.ShowWindow();
 				    			that.SetData();	
-							}
+						}
 					}
 				})(l);
 			}
@@ -475,17 +477,17 @@ jsdate.prototype={
     		itarget=1;
     	}
     	for(k=0;k<12;k++)
-    		{
-    			(function(m){
-    				var m=k;
-    				document.getElementById(that.ChooseMonthBoxUl.id).getElementsByTagName('li')[k].onclick=function(){
-    					that.mnow=document.getElementById(that.ChooseMonthBoxUl.id).getElementsByTagName('li')[m].innerHTML-1;
-    					document.getElementById(that.ChooseMonthBox.id).style.display='none';
-				    	that.mnow=parseInt(that.mnow);
-				    	that.ShowWindow();
-				    	that.SetData();	
-    				}
-    		})(k);
+    	{
+    		(function(m){
+    			var m=k;
+    			document.getElementById(that.ChooseMonthBoxUl.id).getElementsByTagName('li')[k].onclick=function(){
+    				that.mnow=document.getElementById(that.ChooseMonthBoxUl.id).getElementsByTagName('li')[m].innerHTML-1;
+    				document.getElementById(that.ChooseMonthBox.id).style.display='none';
+			    	that.mnow=parseInt(that.mnow);
+			    	that.ShowWindow();
+			    	that.SetData();	
+    			}
+	    	})(k);
     	}		
     }
 }
