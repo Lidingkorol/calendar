@@ -2,6 +2,7 @@ calendar组件
 ======
 ###calendar组件简介：支持IE7以上及firefox，chrome浏览器
 ###calendar功能介绍： 1丶提供一个可选日历窗口，便于选择日期
+###效果展示见： https://lidingkorol.github.io/calendar/
 ###插件使用操作如下：
 --------
 ####一丶首先将index.js添加至html页面中
