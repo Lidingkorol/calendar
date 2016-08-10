@@ -202,9 +202,10 @@ jsdate.prototype={
 			height:'inherit',
 			margin:'0',
 			background:'pink',
-			lineHeight:'32px',
-			display:'block',
+			fontSize:'14px',
+			display:'inline-block',
 			float:'left',
+			lineHeight:'32px',
 			textAlign:'center'
 		});
 		SetStyles(this.ChooseYearBox,{
@@ -220,7 +221,7 @@ jsdate.prototype={
 		});
 		SetStyles(this.ChooseMonthBox,{
 			width:'32px',
-			height:'212px',
+			height:'220px',
 			margin:'0',
 			background:'white',
 			display:'none',
@@ -237,19 +238,18 @@ jsdate.prototype={
 			display:'block',
 			textAlign:'center',
 			lineHeight:'32px',
+			fontSize:'14px',
 			float:'left'
 		});
 		SetStyles(this.ChooseYearBoxUl,{
 			margin:'0 0 0 0',
 			padding:'0',
-            height:'180px',
             textAlign:'center',
             listStyle:'none'
 		});
 		SetStyles(this.ChooseMonthBoxUl,{
 			margin:'0 0 0 0',
 			padding:'0',
-            height:'180px',
             textAlign:'center',
             listStyle:'none'
 		});	
